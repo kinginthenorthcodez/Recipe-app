@@ -1,6 +1,6 @@
 class RecipeFood < ApplicationRecord
-belongs_to :recipe, class_name: 'Recipe'
-belongs_to :food, class_name: 'Food'
+  belongs_to :recipe, class_name: 'Recipe'
+  belongs_to :food, class_name: 'Food'
 
-validates :quantity, numericality: { greater_than_or_equal_to: 0 }
+  validates :quantity, numericality: { greater_than_or_equal_to: 0 }
 end
