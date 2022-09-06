@@ -10,7 +10,7 @@ class Food < ApplicationRecord
   private
 
   def price_is_valid_decimal_precision
-    return unless price.to_f != price.to_f.round(2)
+    return unless price != price.to_f.round(2)
 
     errors.add(:price,
                'The price of the product is invalid.
