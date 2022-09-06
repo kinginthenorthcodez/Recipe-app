@@ -1,0 +1,10 @@
+<div>
+<% @foods.where(user_id: current_user.id).each do |food| %>
+  <div class="food">
+<h2><%= food.name.capitalize %></h2>
+<h4>Measurement unit: <%= food.measurement_unit%></h4>
+<h4>Price: <%= food.price %> $</h4>
+</div>
+<% end %>
+<%= link_to 'Add Food', new_food_path %>
+</div>
