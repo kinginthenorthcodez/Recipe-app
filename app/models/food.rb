@@ -8,10 +8,12 @@ class Food < ApplicationRecord
   validate :price_is_valid_decimal_precision
 
   private
-  def price_is_valid_decimal_precision
-    if price.to_f != price.to_f.round(2)
-      errors.add(:price, "The price of the product is invalid. There should only be two digits at most after the decimal point.")
-    end
-  end
 
+  def price_is_valid_decimal_precision
+    return unless price.to_f != price.to_f.round(2)
+
+    errors.add(:price,
+               'The price of the product is invalid.
+                  There should only be two digits at most after the decimal point.')
+  end
 end
