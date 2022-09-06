@@ -4,5 +4,11 @@ Rails.application.routes.draw do
   
   # Defines the root path route ("/")
   root "welcome#index"
+  resources :users, only: [:index] do
+    resources :recipe, only: [:index, :new, :show, :create, :destroy]
+    resources :inventory, only: [:index, :new, :show, :create, :destroy] do
+      resources :inventory_foods, only:  [:index, :new, :show, :create, :destroy]
+    end
+  end
   resources :foods, only: %i[index new create]
 end
