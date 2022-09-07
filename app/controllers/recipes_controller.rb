@@ -5,15 +5,15 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    @user = current_user
+    @user = current_user.id
   end
 
   def create
-    @recipe = recipe.new(recipe_params)
+    @recipe = Recipe.new(recipe_params)
     @recipe.user_id = current_user.id
     Rails.logger.debug("My recipe: #{@recipe.inspect}")
     @recipe.save
-    redirect_to recipes_path(current_user)
+    redirect_to user_recipes_path(current_user)
   end
 
   private
