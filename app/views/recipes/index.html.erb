@@ -11,7 +11,9 @@
 <h4>Type: Private</h4>
 <% end %>
 </div>
+<% if can? :delete, recipe %>
   <%= button_to 'Delete', user_recipe_url(recipe.id, current_user.id), method: :delete, data: {turbo: false} %>
+<% end %>
 <% end %>
 <%= link_to 'Add Recipe', new_user_recipe_path(current_user.id) %>
 </div>

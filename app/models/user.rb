@@ -5,4 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
 
   validates :name, presence: true
+
+  ROLES = %i[user].freeze
+
+  def is?(requested_role)
+    role == requested_role.to_s
+  end
 end
