@@ -1,0 +1,16 @@
+<h2>User Inventory</h2>
+<%=link_to 'Back', users_path %>
+<%=link_to 'New Inventory', new_user_inventory_path(current_user) %>
+<div class= "inventory-container">
+  <ul class="list-items">
+     <% @inventories.each do |inventory|%>
+      <li class= "list-item">
+      <div class="list-side">
+        <p><%= link_to inventory.name, user_inventory_path(current_user,inventory) %></p>
+        <%= button_to "Remove", user_inventory_path(current_user,inventory), method: :delete %>
+       </div>
+        <p><%= inventory.description %></p>
+      </li>
+     <%end%>
+  </ul>
+</div>

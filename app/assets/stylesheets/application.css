@@ -13,3 +13,45 @@
  *= require_tree .
  *= require_self
  */
+
+/* Inventories */
+
+.inventory-container {
+  width: 80%;
+  margin: 0 auto;
+  scroll-behavior: smooth;
+}
+
+.inventory-container .list-items {
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 5px;
+}
+
+.inventory-container .list-items .list-item {
+  display: flex;
+  justify-content: space-around;
+}
+
+.inventory-container .list-side {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.inventory-detials {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.inventory-detials .in-title {
+  align-self: center;
+}
+
+.inventory-detials .in-btn {
+  align-self: flex-end;
+}
