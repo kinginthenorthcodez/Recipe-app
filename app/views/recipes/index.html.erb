@@ -1,0 +1,16 @@
+<div>
+<% @recipes.where(user_id: current_user.id).each do |recipe| %>
+  <div class="recipe">
+<h2><%= recipe.name.capitalize %></h2>
+<h4>Preparation time: <%= recipe.preparation_time%>HRs</h4>
+<h4>Cooking time: <%= recipe.cooking_time %>HRs</h4>
+<h4>Description: <%= recipe.description %></h4>
+<% if recipe.public %>
+<h4>Type: Public</h4>
+<% else %>
+<h4>Type: Private</h4>
+<% end %>
+</div>
+<% end %>
+<%= link_to 'Add Recipe', new_user_recipe_path(current_user.id) %>
+</div>
