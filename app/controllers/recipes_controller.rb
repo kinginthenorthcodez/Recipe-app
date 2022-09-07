@@ -16,6 +16,11 @@ class RecipesController < ApplicationController
     redirect_to user_recipes_path(current_user)
   end
 
+  def destroy
+    Recipe.destroy(params[:user_id])
+    redirect_back(fallback_location: user_recipes_path)
+  end
+
   private
 
   def recipe_params
