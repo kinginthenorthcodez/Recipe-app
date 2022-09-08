@@ -1,5 +1,5 @@
 <h1>Add a new food</h1>
-<%= form_with model: @food, url: foods_path(@user) do |form|%>
+<%= form_with model: @food, url: user_foods_path(@user) do |form|%>
   <div class='mb-3'>
   <%= form.label :name %>
   <%= form.text_field :name, class: 'form-control' %>
@@ -17,5 +17,6 @@
   
   <div class='mb-3'>
   <%= form.submit 'new food' ,class: 'btn btn-primary'%>
+  
   </div>
   <% end %>
