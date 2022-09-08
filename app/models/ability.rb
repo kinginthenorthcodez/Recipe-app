@@ -5,6 +5,6 @@ class Ability
   def initialize(user)
     return unless user.present? # additional permissions for logged in users (they can read their own posts)
 
-    can :delete, Recipe, user: user
+    can :delete, Recipe, user:
   end
 end
