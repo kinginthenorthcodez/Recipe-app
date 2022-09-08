@@ -1,0 +1,14 @@
+<h1>Public Recipes</h1>
+<%= link_to "Login", user_session_path %>
+<% @public_recipes.each do |recipe| %>
+<div>
+  <section>
+    <h2><%= recipe.name %></h2>
+    <h2>By: <%= recipe.user.name %></h2>
+  </section>
+  <section>
+    <p>Total food items: <%= recipe.recipe_foods.count %></p>
+    <p>Total price: $<%= price_and_total_food(recipe.recipe_foods) %></p>
+  </section>
+</div>
+<% end %>
