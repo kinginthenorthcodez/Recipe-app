@@ -1,3 +1,9 @@
+.container {
+background-image: url(https://i.pinimg.com/564x/9c/86/d9/9c86d90ce10de0fb6b8dd230d42905bd.jpg);
+background-position: center;
+height: 100vh;
+}
+
 .add-food {
   display: flex;
   width: 100vw;
@@ -16,7 +22,8 @@
 
 .foods-container {
   margin:3vw;
-  border: solid 3px black;
+  border: groove 3px black;
+  border-radius: 3px;
 }
 
 .table-head, .food-index {
@@ -29,6 +36,7 @@
 
 .food-index:nth-child(even) {
   background-color: lightgray;
+  opacity: .8;
 }
 
 .table-head > a {
