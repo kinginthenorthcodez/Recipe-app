@@ -7,7 +7,7 @@
   <% inventory_food = InventoryFood.where(food_id: food.id).sum(:quantity) %>
     <% recipe_food = RecipeFood.where(food_id: food.id).sum(:quantity) %>
   <div class="food">
-<h2><%= food.name.capitalize %></h2>
+<h3><%= food.name.capitalize %></h3>
 <% missing_quantity = recipe_food - inventory_food %>
 <h4>missing quantity: <%=  missing_quantity %>
  <%= food.measurement_unit %></h4>
@@ -18,4 +18,4 @@
 <% end %>
 </div>
 <section class="total"><h3>Amount of food to buy: <%= @missing_foods.length %></h3>
-<h3>Total value of food needed: <%= @total_price %></h3></section>
+<h3>Total value of food needed: <%= @total_price %>$</h3></section>
