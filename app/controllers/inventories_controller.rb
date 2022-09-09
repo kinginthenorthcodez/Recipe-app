@@ -7,7 +7,7 @@ class InventoriesController < ApplicationController
     @inventory = Inventory.new
     respond_to do |format|
       format.html do
-        render :new, locals: { inventory: @inventory}
+        render :new, locals: { inventory: @inventory }
       end
     end
   end
@@ -15,7 +15,7 @@ class InventoriesController < ApplicationController
   def show
     @inventory = Inventory.find_by(id: params[:id])
     @list = Inventory.where(user_id: current_user.id)
-    @data = @list.map {|n| n.name }
+    @data = @list.map(&:name)
   end
 
   def create
