@@ -7,9 +7,16 @@ Rails.application.routes.draw do
   root "public_recipes#index"
 
   get 'public_recipes', to: 'public_recipes#index', as: 'public_recipes'
-  resources :users, only: [:index] do
-    resources :recipes, only: [:index, :new, :destroy, :create, :show]
+    get 'recipes_foods/new'
+  devise_scope :user do
+    get '/users/:user_id/recipes/:recipe_id/recipes_foods/new' => 'recipes_foods#new'
+    get '/users/:user_id/recipes/:recipe_id/recipes_foods/:id' => 'recipes_foods#destroy'
+  end
 
+  resources :users, only: [:index] do
+    resources :recipes, only: [:index, :new, :destroy, :create, :show] do
+       resources :recipes_foods, only: %i[new create destroy]
+    end
     resources :inventory, only: [:index, :new, :show, :create, :destroy] do
       resources :inventory_foods, only:  [:index, :new, :show, :create, :destroy]
     end
