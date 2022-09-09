@@ -55,3 +55,8 @@
 .inventory-detials .in-btn {
   align-self: flex-end;
 }
+
+.lnlist-form {
+  display: flex;
+  justify-content: space-evenly;
+}

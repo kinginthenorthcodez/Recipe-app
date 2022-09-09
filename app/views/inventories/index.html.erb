@@ -4,13 +4,13 @@
 <div class= "inventory-container">
   <ul class="list-items">
      <% @inventories.each do |inventory|%>
-      <li class= "list-item">
-      <div class="list-side">
-        <p><%= link_to inventory.name, user_inventory_path(current_user,inventory) %></p>
-        <%= button_to "Remove", user_inventory_path(current_user,inventory), method: :delete %>
-       </div>
+      <div class= "list-item">
+        <div class="list-side">
+         <p><%= link_to inventory.name, user_inventory_path(current_user,inventory) %></p>
+         <p> <%= button_to "Remove", user_inventory_path(current_user,inventory), method: :delete %></p>
+        </div>
         <p><%= inventory.description %></p>
-      </li>
+      </div>
      <%end%>
   </ul>
 </div>

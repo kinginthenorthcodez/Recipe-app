@@ -1,5 +1,4 @@
 <h2>Create Inventory</h2>
-
 <div class="inventory-form">
 <%= form_with model: inventory, url: user_inventories_path , method: :post, local: true, scope: :inventory do |f|%>
   <div>
@@ -9,6 +8,7 @@
   <div>
      <%= f.text_area :description, placeholder: "Your inventory description here.." %>
   </div>
+
   <div>
     <%= f.submit class: "btn"%>
   </div>
