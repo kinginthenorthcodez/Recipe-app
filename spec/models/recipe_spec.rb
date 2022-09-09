@@ -2,7 +2,10 @@ require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"
-   subject { Recipe.new(name: 'Steak', preparation_time: 1.5, cooking_time: 2, description: "a deep grilled steak", public: true, user_id:1) }
+  subject do
+    Recipe.new(name: 'Steak', preparation_time: 1.5, cooking_time: 2, description: 'a deep grilled steak', public: true,
+               user_id: 1)
+  end
 
   before { subject.save }
 

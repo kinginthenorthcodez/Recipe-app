@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe RecipeFood, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"
-   subject { RecipeFood.new(quantity: 1.5, recipe_id:1, food_id:1) }
+  subject { RecipeFood.new(quantity: 1.5, recipe_id: 1, food_id: 1) }
 
   before { subject.save }
 
