@@ -1,5 +1,5 @@
 .shopping-body {
-  background-size:cover;
+  background-size: cover;
   height: 100%;
   padding: 10vw 5vw;
   background-image: url('https://i.pinimg.com/564x/da/69/21/da692140ac81fd24ce8dc7b59b50a69f.jpg');
@@ -7,7 +7,7 @@
 }
 
 .shopping-title {
-  position:relative;
+  position: relative;
   left: 32%;
   top: 0;
   font-size: 5vw;
@@ -24,7 +24,7 @@
 }
 
 .food {
-  margin:3vw;
+  margin: 3vw;
   border: groove 3px black;
   border-radius: 3px;
   padding: 1.5vw;
