@@ -31,7 +31,7 @@ gem 'devise'
 
 gem 'cancancan'
 
-gem 'bullet'
+gem 'bullet', group: 'development'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 

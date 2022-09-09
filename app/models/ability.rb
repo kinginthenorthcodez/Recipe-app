@@ -6,6 +6,6 @@ class Ability
     return unless user.present? # additional permissions for logged in users (they can read their own posts)
 
     can :delete, Food, user: user
-    can :delete, Recipe, user: 'user'
+    can :delete, Recipe, user: user
   end
 end
