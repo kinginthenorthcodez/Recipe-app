@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   end
 
   resources :foods, only: %i[index new create]
+  resources :shopping_list, only: %i[index]
 end

@@ -1,6 +1,6 @@
 class PublicRecipesController < ApplicationController
   def index
-    @public_recipes = Recipe.includes(recipe_foods: [:food]).where(public: false).order(created_at: :desc)
+    @public_recipes = Recipe.includes(recipe_foods: [:food]).where(public: true).order(created_at: :desc)
   end
 
   def price_and_total_food(recipe_foods)
