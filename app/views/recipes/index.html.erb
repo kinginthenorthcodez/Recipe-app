@@ -1,21 +1,19 @@
-<div>
+<div class='recipe-container'>
 <% @recipes.where(user_id: current_user.id).each do |recipe| %>
   <div class="recipe">
-<%= link_to user_recipe_path(id:recipe.id) do%>
-<h2><%= recipe.name.capitalize %></h2>
-<% end %>
-<h4>Preparation time: <%= recipe.preparation_time%>HRs</h4>
-<h4>Cooking time: <%= recipe.cooking_time %>HRs</h4>
-<h4>Description: <%= recipe.description %></h4>
-<% if recipe.public %>
-<h4>Type: Public</h4>
-<% else %>
-<h4>Type: Private</h4>
-<% end %>
-</div>
-<% if can? :delete, recipe %>
-  <%= button_to 'Delete', user_recipe_url(recipe.id, current_user.id), method: :delete, data: {turbo: false} %>
-<% end %>
-<% end %>
+  <%= link_to user_recipe_path(id:recipe.id) do%>
+  <h2><%= recipe.name.capitalize %></h2>
+  <% end %>
+  <h4>Description: <%= recipe.description %></h4>
+  <% if recipe.public %>
+  <h5>Type: Public</h5>
+  <% else %>
+  <h5>Type: Private</h5>
+  <% end %>
+  <% if can? :delete, recipe %>
+  <%= button_to 'Remove', user_recipe_url(recipe.id, current_user.id), method: :delete, data: {turbo: false} %>
+  <% end %>
+  </div>
+  <% end %>
 <%= link_to 'Add Recipe', new_user_recipe_path(current_user.id) %>
 </div>
