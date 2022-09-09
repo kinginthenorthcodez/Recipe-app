@@ -1,0 +1,34 @@
+.shopping-body {
+  background-size:cover;
+  height: 100%;
+  padding: 10vw 5vw;
+  background-image: url('https://i.pinimg.com/564x/da/69/21/da692140ac81fd24ce8dc7b59b50a69f.jpg');
+  backface-visibility: hidden;
+}
+
+.shopping-title {
+  position:relative;
+  left: 32%;
+  top: 0;
+  font-size: 5vw;
+}
+
+.shopping-container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.total {
+  display: flex;
+  justify-content: space-around;
+}
+
+.food {
+  margin:3vw;
+  border: groove 3px black;
+  border-radius: 3px;
+  padding: 1.5vw;
+  background-color: rgba(211, 211, 211, 0.502);
+  display: flex;
+  justify-content: space-around;
+}
