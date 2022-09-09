@@ -1,7 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .container {
-background-image: url(https://i.pinimg.com/564x/9c/86/d9/9c86d90ce10de0fb6b8dd230d42905bd.jpg);
-background-position: center;
+background-image: url(https://files.naoacreditocdn.com/wp-content/uploads/2019/11/278d951cfc2e1724e16a168749b3eb84-800x449.jpg);
+background-size:cover;
 height: 100vh;
+}
+
+.table-head > h4{
+  color: white;
+  font-size: 2vw;
+}
+
+.table-head > h2 {
+ color: white; 
 }
 
 .add-food {
@@ -15,6 +29,7 @@ height: 100vh;
   border-radius: 3px;
   padding: 1.5vw;
   margin-right: 10vw;
+  margin-top: 3vw;
   text-decoration: none;
   color: white;
   background-color: rgb(66, 66, 244);
@@ -32,11 +47,16 @@ height: 100vh;
   gap: 8vw;
   align-items: flex-start;
   padding: 2vw;
+  background-color: rgba(84, 81, 78, 0.487);
 }
 
 .food-index:nth-child(even) {
   background-color: lightgray;
   opacity: .8;
+}
+
+.food-index > h4 {
+  font-size: 2vw;
 }
 
 .table-head > a {
