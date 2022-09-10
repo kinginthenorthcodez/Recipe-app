@@ -8,7 +8,5 @@ class Ability
     return unless user.present? # additional permissions for logged in users
 
     can :manage, Inventory, user:
-    can :delete, Food, user: user
-    can :delete, Recipe, user: 'user
   end
 end
