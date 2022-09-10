@@ -2,8 +2,8 @@
 <p>Preparatoin time: <%= @recipe.preparation_time %></p>
 <p>Cooking time: <%= @recipe.cooking_time %></p>
 <label>Public:<%= check_box_tag 'isPublic', 'no', @recipe.public %><br>
- <%# <%= link_to "Generate shopping list", some_user_shoping_path(@recipe.user_id, @recipe.id)%> %>
-<%# <%= link_to 'Add Food Ingredients', new_recipe_food_path(current_user.id, @recipe.id) %> %>
+<%# <%= link_to "Generate shopping list", user_recipe_shoppings_path(@recipe.user_id, @recipe.id)%> %>
+<%= link_to 'Add Food Ingredients',new_user_recipe_recipes_food_path(current_user.id, @recipe.id) %>
 <table>
         <thead>
           <tr>
@@ -20,8 +20,11 @@
               <td><%= rf.quantity %></td>
               <td>$<%= rf.food.price %></td>
               <div>
-                  <td><%= link_to 'Modify', user_recipe_path %>
-                      <%= link_to 'Remove',some_path_to_user_food(current_user.id, @recipe.id, rf.id), method: :delete %>
+                  <td><%= link_to 'Modify',  user_recipe_path %>
+                    <%= rf.id%>
+                    <%=  @recipe.id%>
+                      <%= current_user.id %>
+                      <%= link_to 'Remove', user_recipe_recipes_food_path(current_user.id, @recipe.id, rf.id), method: :delete %>
                   </td>
               </div>
             </tr>

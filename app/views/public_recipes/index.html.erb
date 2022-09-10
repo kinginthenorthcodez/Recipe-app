@@ -1,9 +1,11 @@
 <h1>Public Recipes</h1>
+<% unless user_signed_in? %>
 <%= link_to "Login", user_session_path %>
-<% @public_recipes.includes([:user]).each do |recipe| %>
+<% end %>
+<% @public_recipes.each do |recipe| %>
 <div>
   <section>
-    <h2><%= recipe.name %></h2>
+    <b><%= link_to recipe.name, user_recipe_path(recipe.user.id, recipe.id)%></b><br><br>
     <h2>By: <%= recipe.user.name %></h2>
   </section>
   <section>
