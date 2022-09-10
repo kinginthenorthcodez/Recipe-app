@@ -15,7 +15,7 @@
          <td><%= item.food.name %></td>
          <td><%= item.quantity %><%= item.food.measurement_unit %></td>
          <td>
-         <%= button_to 'Remove',  user_inventory_inventory_food_path(@inventory.id, item.id), method: :delete %>
+         <%= button_to 'Remove',  user_inventory_inventory_food_path(inventory_id: item.inventory_id), method: :delete %>
          </td>
        </tr>
        <% end %>
