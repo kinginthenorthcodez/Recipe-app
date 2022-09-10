@@ -1,6 +1,6 @@
 <h1>Public Recipes</h1>
 <%= link_to "Login", user_session_path %>
-<% @public_recipes.each do |recipe| %>
+<% @public_recipes.includes([:user]).each do |recipe| %>
 <div>
   <section>
     <h2><%= recipe.name %></h2>
