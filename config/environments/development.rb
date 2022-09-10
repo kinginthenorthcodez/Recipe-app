@@ -1,5 +1,5 @@
 require 'active_support/core_ext/integer/time'
-
+require 'tlsmail'
 Rails.application.configure do
   config.after_initialize do
     Bullet.enable        = true
@@ -51,6 +51,22 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+      
+  Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
+
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.perform_deliveries = true
+  ActionMailer::Base.raise_delivery_errors = true
+  ActionMailer::Base.smtp_settings = {
+    :enable_starttls_auto => true,  
+    :address            => 'smtp.gmail.com',
+    :port               => 587,
+    :tls                  => true,
+    :domain             => 'gmail.com', #you can also use google.com
+    :authentication     => :plain,
+    :user_name          => 'isaacmaqueen1@gmail.com',
+    :password           => '_secret_password'
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

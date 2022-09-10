@@ -11,6 +11,8 @@
 - devise - for authentication
 - cancancan - for authorization
 
+### Live demo
+[Live-demo](https://recipe-app-on-rials.herokuapp.com/)
 ### Getting Started
 
 To get a local copy up and running follow these simple steps:

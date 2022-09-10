@@ -21,6 +21,9 @@ gem 'importmap-rails'
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'turbo-rails'
 
+# smtp mailer
+gem 'mail', '~> 2.7', '>= 2.7.1'
+gem 'tlsmail', '~> 0.0.1'
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'stimulus-rails'
 
