@@ -10,7 +10,7 @@ class Ability
     can :manage, Inventory, user: user
     can :manage, InventoryFood, user: user
     can :manage, Recipe, user: user
-    cna :manage, Food, user: user
+    can :manage, Food, user: user
 
     return unless user.is? :admin
 
