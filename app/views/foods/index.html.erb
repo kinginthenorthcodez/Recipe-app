@@ -1,10 +1,18 @@
-<div>
-<% @foods.where(user_id: current_user.id).each do |food| %>
-  <div class="food">
+<div class="container"><div class="add-food"><%= link_to 'Add Food', new_user_food_path %></div>
+<div class='foods-container'>
+<div class="table-head">
+<h2>Name</h2>
+<h4>Measurement unit</h4>
+<h4>Price</h4>
+<h4>Actions</h4></div>
+<% @foods.includes([:user]).where(user_id: current_user.id).each do |food| %>
+  <div class="food-index">
 <h2><%= food.name.capitalize %></h2>
-<h4>Measurement unit: <%= food.measurement_unit%></h4>
-<h4>Price: <%= food.price %> $</h4>
-</div>
+<h4><%= food.measurement_unit%></h4>
+<h4><%= food.price %> $</h4>
+<% if can? :delete, food %>
+  <%= button_to 'Delete', user_food_path(food.id, current_user.id), method: :delete, data: {turbo: false} %>
 <% end %>
-<%= link_to 'Add Food', new_food_path %>
-</div>
+  </div>
+<% end %>
+</div></div>

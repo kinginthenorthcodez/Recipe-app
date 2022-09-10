@@ -1,0 +1,60 @@
+.recipe-container {
+  background-image: url('https://i.pinimg.com/564x/d8/84/a9/d884a9c6ecbaab58f8fd3f2d5aeda924.jpg');
+  background-size: cover;
+  height: 100%;
+  padding: 10vw 2vw;
+}
+
+.recipe-container > a {
+  position: absolute;
+  left: 43vw;
+  padding: 1.5vw;
+  margin-bottom: 2vw;
+  background-color: rgb(91, 91, 249);
+  text-decoration: none;
+  font-size: 3vw;
+  color: white;
+  cursor: pointer;
+}
+
+.recipe {
+  display: grid;
+  grid-template-columns: 30% 50%;
+  margin: 7vw;
+  margin-top: 5vw;
+  border: groove 3px darkgray;
+  padding: 3vw;
+  align-items: center;
+  padding-bottom: 0;
+  background-color: rgba(128, 128, 128, 0.756);
+}
+
+.recipe > a {
+  font-size: 3vw;
+  text-decoration: none;
+}
+
+.recipe > a > h2 {
+  margin: 0.5vw;
+}
+
+.recipe > h4 {
+  font-size: 2.5vw;
+  margin: 2vw;
+}
+
+.recipe > h5 {
+  margin: 1vw;
+}
+
+.recipe > form > button {
+  margin: 2vw;
+  border: none;
+  padding: 1.5vw;
+  background-color: inherit;
+  text-decoration: underline;
+  font-size: 2vw;
+  color: rgb(91, 91, 249);
+  cursor: pointer;
+  padding-left: 0;
+}
