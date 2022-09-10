@@ -8,4 +8,10 @@ class ShoppingListController < ApplicationController
       @missing_foods.push(food) if recipe_food > inventory_food
     end
   end
+
+  def new
+    @inventories = Inventory.all
+  end
+
+  def create; end
 end
