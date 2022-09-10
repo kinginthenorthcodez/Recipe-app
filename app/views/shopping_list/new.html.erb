@@ -1,0 +1,10 @@
+ <%=link_to 'Back', user_inventories_path(current_user) %>
+<div class= "shop-form">
+<h1>Generating Shopping List</h1>
+<p>Chose an inventory to use</p>
+
+<%= form_with url: shopping_list_index_path, method: :post, local: true do |form| %>
+  <%= form.collection_select :inventory_id, @inventories, :id, :name%>
+  <%= form.submit "Generate" %>
+<%end%>
+</div>

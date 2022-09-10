@@ -1,0 +1,26 @@
+<h2> Inventory</h2>
+<%=link_to 'Back', user_inventories_path(current_user) %>
+<div class="inventory-detials">
+   <h3 class="in-title"><%= @inventory.name %></h3>
+   <h3  class ="in-btn"><%= link_to 'Add Food', new_user_inventory_inventory_food_path(current_user,@inventory) %></h3>
+   <div class ="food-basket">
+      <table class="table-list">
+       <tr>
+         <th>Food</th>
+         <th>Quantity</th>
+         <th>Actions</th>
+       </tr>
+       <% @inventory.inventory_foods.includes(:food).each do |item| %>
+       <tr>
+         <td><%= item.food.name %></td>
+         <td><%= item.quantity %><%= item.food.measurement_unit %></td>
+         <td>
+         <% if can? :destroy, item %>
+         <%= button_to 'Remove',  user_inventory_inventory_food_path(inventory_id: item.id), method: :delete %>
+         <%end%>
+         </td>
+       </tr>
+       <% end %>
+      </table>
+   </div>
+</div>

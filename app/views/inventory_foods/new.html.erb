@@ -1,0 +1,22 @@
+<h2>Add to Inventory food list</h2>
+<div class="inventory-foods-form">
+<%= form_with model: @inventory_foods, url: user_inventory_inventory_foods_path(@inventory) , method: :post, local: true, scope: :inventory_foods do |f|%>
+  <div class="lnlist-form">
+  <div>
+     <%= f.label :quantity, class: "name-label" %>
+     <%= f.number_field :quantity, step: :any %>
+  </div>
+  <div>
+     <%= f.label :food_id, class: "name-label" %>
+     <%= f.collection_select(:food_id, @data || [], :to_s, lambda{|i| i.to_s.humanize}) %>
+  </div>
+  <div>
+     <%= f.hidden_field :inventory_id, value: @inventory_id %>
+  </div>
+</div>
+  <div>
+    <%= f.submit class: "btn"%>
+  </div>
+<%end%>
+</div>
+
