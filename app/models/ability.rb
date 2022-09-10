@@ -3,8 +3,11 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    return unless user.present? # additional permissions for logged in users (they can read their own posts)
+    user ||= User.new # guest user
+    can :read, Inventory
+    return unless user.present? # additional permissions for logged in users
 
-    can :delete, Recipe, user:
+    can :delete, Recipe, user: user
+    can :manage, Inventory, user:
   end
 end

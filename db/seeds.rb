@@ -12,5 +12,12 @@ if users.count.zero?
   u2 = User.create!(name: 'Jerry',email: 'jerry@gmail.com',password: 'test123');
 
   inv1 = Inventory.create!(name: 'Inventory 1', user: u1)
-  inv1 = Inventory.create!(name: 'Inventory 2', user: u2)
+  inv2 = Inventory.create!(name: 'Inventory 2', user: u2)
+
+  fd1 = Food.create!(name: 'chilli', measurement_unit: '52', price: 25,user: u1)
+  fd2 = Food.create!(name: 'dried fruits', measurement_unit: '25', price: 55,user: u2)
+  fd3 = Food.create!(name: 'cakes', measurement_unit: '25', price: 55,user: u2)
+  inv_fd1 = InventoryFood.create!(quantity: 5, inventory: inv1, food: fd1)
+  inv_fd2 = InventoryFood.create!(quantity: 5, inventory: inv2, food: fd2)
+  inv_fd3 = InventoryFood.create!(quantity: 5, inventory: inv1, food: fd3)
 end
