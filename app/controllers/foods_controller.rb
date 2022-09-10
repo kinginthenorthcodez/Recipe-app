@@ -13,7 +13,12 @@ class FoodsController < ApplicationController
     @food.user_id = current_user.id
     Rails.logger.debug("My food: #{@food.inspect}")
     @food.save
-    redirect_to foods_path(current_user)
+    redirect_to user_foods_path(current_user)
+  end
+
+  def destroy
+    Food.destroy(params[:user_id])
+    redirect_back(fallback_location: user_foods_path)
   end
 
   private

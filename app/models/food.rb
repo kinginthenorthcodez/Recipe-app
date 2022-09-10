@@ -1,6 +1,7 @@
 class Food < ApplicationRecord
-  has_many :inventory_foods, foreign_key: 'food_id'
-  has_many :recipe_foods, foreign_key: 'food_id'
+  has_many :inventory_foods, foreign_key: 'food_id', dependent: :destroy
+  has_many :recipe_foods, foreign_key: 'food_id', dependent: :destroy
+  belongs_to :user, class_name: 'User'
 
   validates :name, presence: true
   validates :measurement_unit, presence: true

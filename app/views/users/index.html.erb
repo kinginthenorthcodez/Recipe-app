@@ -1,0 +1,9 @@
+<h2>Users</h2>
+<h3><%= link_to 'My Inventory', user_inventories_path(current_user) %></h3>
+<ul>
+<% @users.each do |user|%>
+ <li>
+  <%= link_to user.name, user_inventories_path(user) %>
+ </li>
+<%end%>
+</ul>

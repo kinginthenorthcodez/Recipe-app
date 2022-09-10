@@ -1,0 +1,18 @@
+<h2>Inventory Shopping list</h2>
+<div class="inventory-form">
+<%= form_with model: @inventory, url: user_inventories_path , method: :post, local: true, scope: :inventory do |f|%>
+  <div class="lnlist-form">
+  <div>
+     <%= f.label :inventory_id, class: "name-label" %>
+     <%= f.collection_select(:inventory_id, @data, :to_s, lambda{|i| i.to_s.humanize}) %>
+  </div>
+  <div>
+     <%= f.label :food_id, class: "name-label" %>
+     <%= f.collection_select(:food_id, ['cakes','dried fruits','port wine'], :to_s, lambda{|i| i.to_s.humanize}) %>
+  </div>
+</div>
+  <div>
+    <%= f.submit class: "btn"%>
+  </div>
+<%end%>
+</div>

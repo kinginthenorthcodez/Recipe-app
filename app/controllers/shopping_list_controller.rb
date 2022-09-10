@@ -1,4 +1,4 @@
-class MissingController < ApplicationController
+class ShoppingListController < ApplicationController
   def index
     @foods = Food.where(user_id: current_user.id)
     @missing_foods = []
@@ -8,4 +8,10 @@ class MissingController < ApplicationController
       @missing_foods.push(food) if recipe_food > inventory_food
     end
   end
+
+  def new
+    @inventories = Inventory.all
+  end
+
+  def create; end
 end
