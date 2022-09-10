@@ -30,8 +30,13 @@ class InventoryFoodsController < ApplicationController
   end
 
   def destroy
-    InventoryFood.find(params[:id]).destroy
-    redirect_to user_inventory_path
+    @inventory_food = InventoryFood.find_by(inventory_id: params[:id])
+    if @inventory_food.destroy
+      flash[:success] = 'inventory_food Successfully deleted!'
+    else
+      flash.now[:error] = 'Error: could not delete inventory_food!'
+    end
+    redirect_to user_inventories_path(current_user)
   end
 
   private
