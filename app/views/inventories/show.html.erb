@@ -10,12 +10,14 @@
          <th>Quantity</th>
          <th>Actions</th>
        </tr>
-       <% @inventory.inventory_foods.each do |item| %>
+       <% @inventory.inventory_foods.includes(:food).each do |item| %>
        <tr>
          <td><%= item.food.name %></td>
          <td><%= item.quantity %><%= item.food.measurement_unit %></td>
          <td>
-         <%= button_to 'Remove',  user_inventory_inventory_food_path(inventory_id: item.inventory_id), method: :delete %>
+         <% if can? :destroy, item %>
+         <%= button_to 'Remove',  user_inventory_inventory_food_path(inventory_id: item.id), method: :delete %>
+         <%end%>
          </td>
        </tr>
        <% end %>

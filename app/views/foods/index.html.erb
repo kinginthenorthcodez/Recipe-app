@@ -8,7 +8,7 @@
 <% @foods.includes([:user]).where(user_id: current_user.id).each do |food| %>
   <div class="food-index">
 <h2><%= food.name.capitalize %></h2>
-<h4><%= food.measurement_unit%></h4>
+<h4><%= food.measurement_unit%> </h4>
 <h4><%= food.price %> $</h4>
 <% if can? :delete, food %>
   <%= button_to 'Delete', user_food_path(food.id, current_user.id), method: :delete, data: {turbo: false} %>
